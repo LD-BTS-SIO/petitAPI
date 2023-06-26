@@ -1,6 +1,16 @@
 <?php
 header('Content-Type: application/json');
 
+// Autoriser l'accès depuis un domaine spécifique
+header('Access-Control-Allow-Origin: https://melun-voyage.netlify.app');
+// Autoriser les méthodes GET et POST
+header('Access-Control-Allow-Methods: GET, POST');
+// Autoriser le contenu avec les en-têtes Content-Type spécifiés
+header('Access-Control-Allow-Headers: Content-Type');
+
+// Étape 2 : Inclure le fichier de connexion
+require_once 'connexion.php';
+
 // Connexion à la base de données
 $servername = "phpmyadmin.alwaysdata.com";
 $username = "root";
