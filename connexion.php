@@ -1,14 +1,21 @@
+
+
 <?php
-$servername = "phpmyadmin.alwaysdata.com";
-$username = "root";
-$password = "Lo200177";
+
+//modif 
 $dbname = "darras_reservation";
+$host = "mysql-darras.alwaysdata.net";
+$username = "darras";
+$password = "Lo200177";
 
-// Établir la connexion
-$con = new mysqli($servername, $username, $password, $dbname);
+$con = mysqli_connect($host, $username, $password, $dbname);
 
-// Vérifier la connexion
-if ($con->connect_error) {
-    die("Erreur de connexion à la base de données : " . $con->connect_error);
+// Vérification
+if (!$con) {
+    echo "Message : Impossible de se connecter à la BD";
+die();
+} else {
+    echo "Connexion effectuée avec succès!";
 }
+
 ?>
