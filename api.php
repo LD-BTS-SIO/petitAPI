@@ -9,7 +9,8 @@ header('Access-Control-Allow-Methods: GET, POST');
 header('Access-Control-Allow-Headers: Content-Type');
 
 // Étape 2 : Inclure le fichier de connexion
-require_once 'connexion.php';
+require_once __DIR__ . '/connexion.php';
+
 
 // Connexion à la base de données
 $servername = "phpmyadmin.alwaysdata.com";
@@ -72,3 +73,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['nom'])) {
 
 $con->close();
 ?>
+                                                                                      
