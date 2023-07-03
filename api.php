@@ -13,10 +13,10 @@ require_once __DIR__ . '/connexion.php';
 
 
 // Connexion à la base de données
-$servername = "phpmyadmin.alwaysdata.com";
-$username = "root";
-$password = "Lo200177";
 $dbname = "darras_reservation";
+$host = "mysql-darras.alwaysdata.net";
+$username = "darras";
+$password = "Lo200177";
 
 $con = new mysqli($servername, $username, $password, $dbname);
 
