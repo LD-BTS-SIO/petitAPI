@@ -18,7 +18,7 @@ $host = "mysql-darras.alwaysdata.net";
 $username = "darras";
 $password = "Lo200177";
 
-$con = new mysqli($servername, $username, $password, $dbname);
+$con = new mysqli($host, $username, $password, $dbname);
 
 if ($con->connect_error) {
     die("Erreur de connexion à la base de données : " . $con->connect_error);
@@ -73,4 +73,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['nom'])) {
 
 $con->close();
 ?>
-                                                                                      
