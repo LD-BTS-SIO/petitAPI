@@ -14,11 +14,11 @@ require_once __DIR__ . '/connexion.php';
 
 // Connexion à la base de données
 $dbname = "darras_reservation";
-$host = "mysql-darras.alwaysdata.net";
+$servername = "mysql-darras.alwaysdata.net";
 $username = "darras";
 $password = "Lo200177";
 
-$con = new mysqli($host, $username, $password, $dbname);
+$con = new mysqli($servername, $username, $password, $dbname);
 
 if ($con->connect_error) {
     die("Erreur de connexion à la base de données : " . $con->connect_error);
