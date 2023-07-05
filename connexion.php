@@ -1,7 +1,7 @@
 <?php
 // Connexion à la base de données
 $dbname = "darras_reservation";
-$servername = "mysql-darras.alwaysdata.net";
+$servername = "mysql-darras.alwaysdata.net via TCP/IP";
 $username = "darras";
 $password = "Lo200177";
 
