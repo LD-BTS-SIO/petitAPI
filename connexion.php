@@ -1,14 +1,13 @@
 
 
 <?php
-
-//modif 
+// Connexion à la base de données
 $dbname = "darras_reservation";
-$host = "mysql-darras.alwaysdata.net";
-$username = "darras";
+$servername = "mysql-darras.alwaysdata.net";
+$username = "darras@2a00:b6e0:1:210:1::1";
 $password = "Lo200177";
 
-$con = mysqli_connect($host, $username, $password, $dbname);
+$con = mysqli_connect($servername, $username, $password, $dbname);
 
 // Vérification
 if (!$con) {
