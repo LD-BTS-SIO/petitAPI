@@ -11,17 +11,21 @@ header('Access-Control-Allow-Headers: Content-Type');
 // Étape 2 : Inclure le fichier de connexion
 require_once __DIR__ . '/connexion.php';
 
-
 // Connexion à la base de données
 $dbname = "darras_reservation";
 $servername = "mysql-darras.alwaysdata.net";
-$username = "darras@2a00:b6e0:1:210:1::1";
+$port = "3306";
+$username = "darras";
 $password = "Lo200177";
 
-$con = new mysqli($servername, $username, $password, $dbname);
+$con = new mysqli($servername, $username, $password, $dbname, $port);
 
+// Vérifier les erreurs de connexion
 if ($con->connect_error) {
-    die("Erreur de connexion à la base de données : " . $con->connect_error);
+    $response['error'] = true;
+    $response['message'] = "Erreur de connexion à la base de données : " . $con->connect_error;
+    echo json_encode($response);
+    exit;
 }
 
 // Récupérer toutes les réservations
@@ -39,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         $response['message'] = 'La récupération des réservations a réussi.';
     } else {
         $response['error'] = true;
-        $response['message'] = 'Échec de la récupération des réservations.';
+        $response['message'] = 'Échec de la récupération des réservations : ' . $con->error;
     }
 
     echo json_encode($response);
@@ -65,7 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['nom'])) {
         }
     } else {
         $response['error'] = true;
-        $response['message'] = 'Échec de la récupération de la réservation par nom.';
+        $response['message'] = 'Échec de la récupération de la réservation par nom : ' . $con->error;
     }
 
     echo json_encode($response);
