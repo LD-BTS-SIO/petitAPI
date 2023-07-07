@@ -9,7 +9,8 @@ header('Access-Control-Allow-Methods: GET, POST');
 header('Access-Control-Allow-Headers: Content-Type');
 
 // Étape 2 : Inclure le fichier de connexion
-require_once __DIR__ . '/connexion.php';
+require_once __DIR__ . '/co/connexion.php';
+
 
 // Connexion à la base de données
 $dbname = "darras_reservation";
